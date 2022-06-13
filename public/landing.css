@@ -1,0 +1,44 @@
+body {
+    scroll-behavior: smooth;
+}
+
+nav {
+    background-image: linear-gradient(to right, blue, rgb(69, 130, 252));
+}
+
+
+#heading {
+    color: white;
+    font-weight: bolder;
+}
+
+#navbarNav ul li a {
+    color: white;
+    font-weight: 500;
+}
+
+#banner {
+    position: relative;
+    padding-top: 5%;
+    background-image: linear-gradient(to right, blue, rgb(69, 130, 252));
+    color: white;
+}
+
+.title {
+    font-weight: bolder;
+    margin-top: 80px;
+}
+
+.fitur {
+    margin-top: 80px;
+    margin-bottom: 67px;
+    font-weight: bolder;
+}
+
+.row h4 {
+    margin-top: 33px;
+}
+
+#produk {
+    background-color: rgb(69, 130, 252);
+}
