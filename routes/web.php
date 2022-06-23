@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ApiController;
 use App\Http\Controllers\Auth_admin;
 use App\Http\Controllers\Category;
 use App\Http\Controllers\CustomerController;
@@ -72,4 +73,14 @@ Route::controller(Category::class)->group( function() {
     Route::post('/category/edit/{id}', 'update');
     Route::post('/category/store', 'store');
     Route::get('/category/delete/{id}', 'destroy');
+});
+
+Route::get('siswa' , [Dashboard::class, 'siswa']);
+Route::post('siswa/store' , [Dashboard::class, 'store']);
+Route::get('siswa/edit/{id}' , [Dashboard::class, 'edit']);
+Route::post('siswa/edit/{id}' , [Dashboard::class, 'update']);
+Route::get('siswa/delete/{id}' , [Dashboard::class, 'delete']);
+
+Route::controller(ApiController::class)->group(function () {
+    Route::get('api/produk', 'produk');
 });

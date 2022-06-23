@@ -13,8 +13,6 @@ class Produk extends Model
     protected $table = 'produk';
     protected $guarded = ['id'];
 
-    public $timestamps = false;
-
     public function category() {
         return $this->belongsTo(CategoryModel::class, 'kategori_id');
     }

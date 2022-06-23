@@ -33,7 +33,7 @@ class CustomerController extends Controller
         $password = md5($request->input('password'));
         if($customer->where('email', $request->input('email'))->where('password', $password)->exists()){
             $_SESSION['email']= $request->input('email');
-            return redirect('landing');
+            return redirect('/');
         } else {
             if($customer->where('email', $request->input('email'))->exists()){
                 return redirect('/Login')->with('Failed','Password Salah');

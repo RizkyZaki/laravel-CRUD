@@ -71,10 +71,10 @@ class Product extends Controller
     public function show($id)
     {
         $produk = Produk::find($id);
-        $category = CategoryModel::all();
+        // $category = CategoryModel::all();
         return view('detail-produk', [
             'produk' => $produk, 
-            'category' => $category, 
+            // 'category' => $category, 
             'title' => 'Produk | '
         ]);
     }
