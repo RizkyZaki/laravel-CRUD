@@ -32,7 +32,7 @@
             <tr>
                 <td>{{$nomor}}</td>
                 <td>{{$item->nama_produk}}</td>
-                <td>{{$item->category->nama_kategori}}</td>
+                <td>{{$item->category!=null ? $item->category->nama_kategori:''}}</td>
                 <td>Rp {{number_format(intval($item->harga),2)}}</td>
                 <td class="text-center"><a class="btn btn-primary btn-sm" href="{{url('product/edit/'. $item->id)}}"
                         role="button">Edit</a>

@@ -17,9 +17,11 @@ class Product extends Controller
     public function index()
     {
         return view('produk', [
-            'produk' => Produk::all(),
+            'produk' => Produk::with('category')->get(),
             'title' => 'Product List',
         ]);
+        // $produk = Produk::with('category')->first();
+        // return response()->json($produk);
     }
 
     /**
@@ -70,10 +72,10 @@ class Product extends Controller
      */
     public function show($id)
     {
-        $produk = Produk::find($id);
+        
         // $category = CategoryModel::all();
         return view('detail-produk', [
-            'produk' => $produk, 
+            'produk' => Produk::find($id), 
             // 'category' => $category, 
             'title' => 'Produk | '
         ]);

@@ -34,6 +34,8 @@
                         role="button">Edit</a>
                     <a class="btn btn-danger btn-sm" href="{{url('category/delete/'. $item->id)}}"
                         role="button">Delete</a>
+                    <a class="btn btn-danger btn-sm" href="{{url('category/'. $item->id)}}" role="button">Show
+                        Products</a>
                 </td>
             </tr>
             @php

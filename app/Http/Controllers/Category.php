@@ -55,9 +55,14 @@ class Category extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function getProduk($id)
     {
-        //
+        $category = CategoryModel::find($id);
+        return view('category-produk', [
+            'title' => 'list Product',
+            'produk' => $category->product, 
+            'kategori' => $category->nama_kategori
+        ]);
     }
 
     /**

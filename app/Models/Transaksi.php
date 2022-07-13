@@ -20,6 +20,6 @@ class Transaksi extends Model
     }
 
     public function transaksi_detail() {
-        return $this->hasOne(Transaksi_detail::class, 'transaksi_id');
+        return $this->hasMany(Transaksi_detail::class, 'transaksi_id');
     }
 }

@@ -73,6 +73,7 @@ Route::controller(Category::class)->group( function() {
     Route::post('/category/edit/{id}', 'update');
     Route::post('/category/store', 'store');
     Route::get('/category/delete/{id}', 'destroy');
+    Route::get('/category/{id}', 'getProduk');
 });
 
 Route::get('siswa' , [Dashboard::class, 'siswa']);
@@ -81,6 +82,18 @@ Route::get('siswa/edit/{id}' , [Dashboard::class, 'edit']);
 Route::post('siswa/edit/{id}' , [Dashboard::class, 'update']);
 Route::get('siswa/delete/{id}' , [Dashboard::class, 'delete']);
 
-Route::controller(ApiController::class)->group(function () {
-    Route::get('api/produk', 'produk');
+Route::prefix('api')->group(function (){
+    Route::post('login', [ApiController::class, 'login']);
+    Route::post('register', [ApiController::class, 'register']);
+});
+
+Route::prefix('api')->group(function() {
+    Route::controller(ApiController::class)->group(function () {
+        Route::get('produk', 'getProduk');
+        Route::get('list/produk', 'allProduk');
+        Route::post('save/cart', 'saveCart');
+        Route::post('save/kategori', 'storeCategory');
+        Route::get('produk/kategori/{id}', 'KategoriProduk');
+        Route::get('search/{name}', 'Search');
+    });
 });
